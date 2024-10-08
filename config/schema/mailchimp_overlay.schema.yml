@@ -1,0 +1,21 @@
+# Schema for the configuration files of the mailchimp_overlay module.
+
+mailchimp_overlay.settings:
+  type: config_object
+  label: 'Mailchimp Overlay settings'
+  mapping:
+    switch:
+      type: boolean
+      label: 'Mailchimp Overlay Switch'
+    signup_page:
+      type: string
+      label: 'Mailchimp Overlay Signup Page Key'
+    layout:
+      type: string
+      label: 'Mailchimp Overlay Signup Page'
+    title:
+      type: label
+      label: 'Mailchimp Overlay Title' 
+    disclaimer:
+      type: string
+      label: 'Disclaimer or Note Text'

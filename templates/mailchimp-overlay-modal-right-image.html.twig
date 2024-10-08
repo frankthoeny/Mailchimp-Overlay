@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-2column.html.twig.
+ * Mailchimp Overlay 2 Column Template.
+ */
+#}
+{{ attach_library('mailchimp_overlay/mailchimp-overlay-styling') }}
+{% set image_path = backgroundImage %}
+{% set text_color = textColor %}
+{% set background_color = backgroundColor %}
+
+<div id="enews_signup_wrapper" style="--enews-background-color: {{background_color}}">
+	<div id="enews_signup_2column_wrapper row-reverse">
+		<div class="enews_signup_image column" style="--enews-background-url: url({{ image_path }});"></div>
+		<div class="enews_signup_content column" style="--enews-text-color: {{text_color}}">
+			{{ message }}
+			{{ signupform }}
+		</div>
+	</div>
+
+	{% if disclaimer %}
+		{{ disclaimer }}
+	{% endif %}
+</div>

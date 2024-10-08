@@ -1,0 +1,5 @@
+mailchimp_overlay.admin_settings:
+  route_name: mailchimp_overlay.admin_settings
+  base_route: mailchimp.admin
+  title: 'Overlay'
+  weight: 10

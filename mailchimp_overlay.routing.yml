@@ -1,0 +1,21 @@
+mailchimp_overlay.admin_settings:
+  path: 'admin/config/services/mailchimp/overlay'
+  defaults:
+    _title: 'Mailchimp Overlay'
+    _form: 'Drupal\mailchimp_overlay\Form\MailchimpOverlayAdminSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+mailchimp_overlay.signup:
+  path: '/mailchimp-overlay/enews-signup'
+  defaults:
+    _title: 'eNews Sign Up'
+    _controller: '\Drupal\mailchimp_overlay\Controller\MailchimpOverlayController'
+  requirements:
+    _permission: 'access content'
+mailchimp_overlay.thankyou:
+  path: '/mailchimp-overlay/thankyou'
+  defaults:
+    _title: 'Thank You!'
+    _controller: '\Drupal\mailchimp_overlay\Controller\MailchimpOverlayController:thankyou'
+  requirements:
+    _permission: 'access content'

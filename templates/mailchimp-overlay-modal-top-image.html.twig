@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-2column.html.twig.
+ * Mailchimp Overlay 2 Column Template.
+ */
+#}
+{#{% set image_path = backgroundImage %}
+{% set text_color = textColor %}
+{% set background_color = backgroundColor %} #}
+<div id="mailchimp_overlay" class="column">
+	<div class="top_image_container">
+		<div class="img__background"></div>
+	</div>
+	<div class="content">
+		<h2 class="title">{{title}}</h2>
+		{{ signupform }}
+	{% if disclaimer %}
+		<p class="text">{{ disclaimer }}</p>
+	{% endif %}
+	</div>
+</div>

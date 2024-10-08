@@ -1,0 +1,274 @@
+/*!
+ * jQuery UI Dialog 1.13.3 - Overrides
+ */
+
+.ui-dialog.mailchimp-overlay-dialog {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 17px 34px -20px #888686;
+  box-shadow: 0px 17px 34px -20px #888686;
+}
+
+.ui-dialog.mailchimp-overlay-dialog:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 17px 34px -20px #888686;
+  box-shadow: 0px 17px 34px -20px #888686;
+}
+
+.ui-dialog.mailchimp-overlay-dialog p {
+  margin: 1em 0;
+}
+
+.ui-widget.ui-widget-content {
+  border: rgb(221, 240, 251);
+  border-radius: 0;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-content {
+  padding: 0;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar {
+  position: absolute;
+  z-index: 101;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  border: none;
+  background: none;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+
+/* Bootstrap button vs JQuery UI button styles */
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close,
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-button.ui-widget.ui-dialog-titlebar-close {
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #f1f1f1;
+  background-color: #ffffff;
+  color: #000000;
+  position: absolute;
+  z-index: 100;
+  top: -5px;
+  right: -14px;
+  background-size: 35%;
+  opacity: .9;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-button.ui-widget.ui-dialog-titlebar-close {
+  width: 35px;
+  height: 35px;
+  top: 0px;
+  right: -40px;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover,
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-titlebar .ui-button.ui-widget.ui-dialog-titlebar-close:hover {
+  border: 1px solid #cccccc;
+  background-color: #f1f1f1;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .ui-dialog-content .form-actions {
+  position: relative;
+  margin: 2em 0 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: inherit;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .form-actions #mailchimp-signup-subscribe-page-test-2-form-wrapper-edit-submit {
+  width: 100%;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .form-actions input {
+  width: 100%;
+}
+
+/* Bootstrap messages vs Claro theme messages styles */
+.ui-dialog.mailchimp-overlay-dialog  .messages--error {
+  color: #a51b00;
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+  background-color: #fcf4f2;
+  background-image: none;
+  box-shadow: -8px 0 0 #e62600;
+}
+
+.ui-dialog.mailchimp-overlay-dialog  .messages__title {
+  display: none;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .messages-list {
+  margin: 0;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .messages {
+  margin: 0;
+  padding: 16px;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .messages {
+  color: #58151c;
+  border-color: #f1aeb5;
+  border-width: 1px;
+  background-color: #f8d7da;
+  box-shadow: none;
+  border-radius: .375rem;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .messages .messages__header {
+  margin: 0;
+}
+
+.ui-dialog.mailchimp-overlay-dialog .messages__content {
+  margin-inline-start: 0;
+}
+
+
+/* .ui-dialog.mailchimp-overlay-dialog .form-actions input.close-overlay {
+  width: unset;
+  float: right;
+  font-size: .9em;
+} */
+
+/* .ui-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2em;
+  outline: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  padding: .4em 1em;
+  position: relative;
+}
+
+.ui-dialog .ui-dialog-title {
+  float: left;
+  margin: .1em 0;
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: .3em;
+  top: 50%;
+  width: 20px;
+  margin: -10px 0 0 0;
+  padding: 1px;
+  height: 20px;
+}
+
+.ui-dialog .ui-dialog-content {
+  position: relative;
+  border: 0;
+  padding: .5em 1em;
+  background: none;
+  overflow: auto;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  text-align: left;
+  border-width: 1px 0 0 0;
+  background-image: none;
+  margin-top: .5em;
+  padding: .3em 1em .5em .4em;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: right;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  margin: .5em .4em .5em 0;
+  cursor: pointer;
+}
+
+.ui-dialog .ui-resizable-n {
+  height: 2px;
+  top: 0;
+}
+
+.ui-dialog .ui-resizable-e {
+  width: 2px;
+  right: 0;
+}
+
+.ui-dialog .ui-resizable-s {
+  height: 2px;
+  bottom: 0;
+}
+
+.ui-dialog .ui-resizable-w {
+  width: 2px;
+  left: 0;
+}
+
+.ui-dialog .ui-resizable-se,
+.ui-dialog .ui-resizable-sw,
+.ui-dialog .ui-resizable-ne,
+.ui-dialog .ui-resizable-nw {
+  width: 7px;
+  height: 7px;
+}
+
+.ui-dialog .ui-resizable-se {
+  right: 0;
+  bottom: 0;
+}
+
+.ui-dialog .ui-resizable-sw {
+  left: 0;
+  bottom: 0;
+}
+
+.ui-dialog .ui-resizable-ne {
+  right: 0;
+  top: 0;
+}
+
+.ui-dialog .ui-resizable-nw {
+  left: 0;
+  top: 0;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+  padding-inline-start: 0.2em;
+  padding-inline-end: 0.2em;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  display: flex;
+  float: none;
+  flex-wrap: wrap;
+  gap: 0.3125rem;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  margin: 0;
+}
+
+.ui-widget-overlay {
+  z-index: 1259;
+}
+
+.ui-dialog {
+  z-index: 1260;
+} */

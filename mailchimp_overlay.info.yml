@@ -1,0 +1,13 @@
+name: 'Mailchimp Overlay'
+type: module
+description: 'Mailchimp overlay for signup pages'
+package: Mailchimp
+core_version_requirement: ^8.7.7 || ^10 || ^11
+configure: mailchimp_overlay.settings
+libraries:
+  - mailchimp_overlay/mailchimp-overlay-scripts
+  - mailchimp_overlay/mailchimp-overlay-styling
+dependencies:
+  - mailchimp:mailchimp
+  - mailchimp_signup:mailchimp_signup
+

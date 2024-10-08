@@ -1,0 +1,5 @@
+mailchimp_overlay.admin_settings:
+  route_name: mailchimp_overlay.admin_settings
+  title: 'Signup Overlay'
+  description: 'Manage Mailchimp Overlay Signup Forms'
+  parent: mailchimp.admin

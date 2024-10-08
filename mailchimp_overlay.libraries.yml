@@ -1,0 +1,21 @@
+mailchimp-overlay-scripts:
+  version: 1.0
+  header: true
+  js:
+    js/mailchimp_overlay_dialog_ui.js: { minified: true }
+    js/mailchimp_overlay_ajax.js: { minified: true } 
+  dependencies:
+    - core/drupal
+    - core/drupal.dialog
+    - core/drupal.dialog.ajax
+    - core/js-cookie
+
+mailchimp-overlay-styling:
+  css:
+    theme:
+      css/mailchimp_overlay_dialog_ui.css: {}
+      css/mailchimp_overlay.css: {}
+  dependencies:
+    - core/jquery.ui
+
+
