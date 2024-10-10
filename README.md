@@ -1,16 +1,11 @@
 ## INTRODUCTION
 
-The Mailchimp Overlay module is a DESCRIBE_THE_MODULE_HERE.
+The Mailchimp Overlay module enhances email marketing by allowing businesses to create visually appealing popup overlays on their websites, prompting first-time visitors to sign up for newsletters and offers. It integrates seamlessly with Mailchimp, enabling effective lead capture and mailing list growth, while offering customization options to ensure alignment with the website’s design. Its user-friendly interface simplifies the setup and management of signup forms, ultimately boosting engagement and conversion rates.
 
-The primary use case for this module is:
-
-- Use case #1
-- Use case #2
-- Use case #3
 
 ## REQUIREMENTS
 
-DESCRIBE_MODULE_DEPENDENCIES_HERE
+To use the Mailchimp Overlay module effectively, ensure that both the Mailchimp module and the Mailchimp Signup module are installed and activated on your Drupal CMS, as these dependencies are essential for the overlay functionality to work properly.
 
 ## INSTALLATION
 
@@ -26,5 +21,5 @@ See: https://www.drupal.org/node/895232 for further information.
 
 Current maintainers for Drupal 10:
 
-- FIRST_NAME LAST_NAME (NICKNAME) - https://www.drupal.org/u/NICKNAME
+- Frank Thoeny (teknogypsy) - https://www.drupal.org/u/teknogypsy
 
