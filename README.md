@@ -5,7 +5,7 @@ The Mailchimp Overlay module enhances email marketing by allowing businesses to 
 
 ## REQUIREMENTS
 
-To use the Mailchimp Overlay module effectively, ensure that both the Mailchimp module and the Mailchimp Signup module are installed and activated on your Drupal CMS, as these dependencies are essential for the overlay functionality to work properly.
+To use the Mailchimp Overlay module effectively, ensure that both the Mailchimp module - https://www.drupal.org/project/mailchimp and the Mailchimp Signup sub-module are installed and activated on your Drupal platform, as these dependencies are essential for the overlay functionality to work properly.
 
 ## INSTALLATION
 
