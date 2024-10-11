@@ -27,5 +27,5 @@ The Mailchimp Overlay implements a cookie that triggers an overlay popup only on
 
 Current maintainers for Drupal 10:
 
-- Frank Thoeny - [teknogypsy](https://www.drupal.org/u/teknogypsy)
+- Frank Thoeny - [frankthoeny](https://www.drupal.org/u/frankthoeny)
 
