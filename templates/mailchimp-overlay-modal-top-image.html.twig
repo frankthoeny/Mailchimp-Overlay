@@ -1,16 +1,16 @@
 {#
 /**
  * @file
- * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-2column.html.twig.
- * Mailchimp Overlay 2 Column Template.
+ * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-modal-top-image.html.twig.
+ * Mailchimp Overlay Modal Top Image Template.
  */
 #}
-{#{% set image_path = backgroundImage %}
-{% set text_color = textColor %}
+{% set background_image_url = backgroundImage %}
+{#{% set text_color = textColor %}
 {% set background_color = backgroundColor %} #}
 <div id="mailchimp_overlay" class="column">
 	<div class="top_image_container">
-		<div class="img__background"></div>
+		<div class="img__background" style="--mailchimp-overlay-background-url: url({{ background_image_url }});"></div>
 	</div>
 	<div class="content">
 		<h2 class="title">{{title}}</h2>
