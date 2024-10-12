@@ -1,11 +1,22 @@
+#mailchimp_overlay.column {
+  display: flex;
+  flex-direction: column;
+}
+
 #mailchimp_overlay.row {
   display: flex;
   flex-direction: row;
 }
 
-#mailchimp_overlay.column {
+#mailchimp_overlay.row-reverse {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+}
+
+#mailchimp_overlay.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 #mailchimp_overlay .title {
@@ -85,7 +96,6 @@
 #mailchimp_overlay .btn-primary:hover {
   color: #fff;
   background-color: #f55951;
-  /* border-color: #f55951; */
 }
 
 #mailchimp_overlay .button.js-form-submit.form-submit:focus,
@@ -97,7 +107,6 @@
 #mailchimp_overlay .btn-primary:active {
   color: #fff;
   background-color: #f55951;
-  /* border-color: #0a53be; */
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
@@ -110,8 +119,7 @@
   padding: 0;
 }
 
-#mailchimp_overlay .left_image_container,
-#mailchimp_overlay .right_image_container {
+#mailchimp_overlay .image_container {
   position: relative;
   width: 400px;
   height: auto;
@@ -121,6 +129,7 @@
 
 #mailchimp_overlay .img__background {
   background-image: url(https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+  /* background-image: var(--mailchimp-overlay-background-url); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,37 +142,3 @@
   width: 100%;
   height: 100%;
 }
-
-/* #mailchimp_overlay {
-  background-color: var(--enews-background-color);
-}
-
-#mailchimp_overlay .disclaimer {
-  font-size: 10px;
-}
-
-#mailchimp_overlay .close_overlay_wrapper {
-  text-align: right;
-}
-
-#enews_signup_wrapper .enews_signup_content {
-  font-size: 1.2em;
-  color: var(--enews-text-color);
-}
-
-#mailchimp_overlay_2column_wrapper {
-  display: flex;
-}
- 
-#mailchimp_overlay_2column_wrapper .enews_signup_image {
-  margin-right: 10px;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  background-image: var(--enews-background-url);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-*/
