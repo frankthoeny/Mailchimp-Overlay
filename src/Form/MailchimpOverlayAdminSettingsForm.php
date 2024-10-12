@@ -130,18 +130,7 @@ class MailchimpOverlayAdminSettingsForm extends ConfigFormBase {
     '#default_value' => $config->get('dialog_width') ? $config->get('dialog_width') : 600,
    ];
 
-  // $form['actions']['submit'] = [
-  //  '#type'   => 'submit',
-  //  '#submit' => '::customSubmitHandler',
-  // ];
-
   return parent::buildForm($form, $form_state);
- }
-
- public function customSubmitHandler() {
-  // $config = \Drupal::config('mailchimp_overlay.settings');
-  // add the cache tag, so that the output gets invalidated when the config is saved
-  // \Drupal::service('renderer')->addCacheableDependency($attachments, $config);
  }
 
  /**
@@ -161,7 +150,6 @@ class MailchimpOverlayAdminSettingsForm extends ConfigFormBase {
    ->save();
 
   parent::submitForm($form, $form_state);
-//   $this->messenger()->addStatus($this->t('The settings has been saved.'));
  }
 
 }
