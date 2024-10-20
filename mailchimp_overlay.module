@@ -22,7 +22,7 @@ function get_mailchimp_signup_id() {
 
 function mailchimp_signup_form_id() {
  $signup = get_mailchimp_signup_id();
- if (!$signup==null) {
+ if (!$signup == null) {
   $form_id = 'mailchimp_signup_subscribe_page_' . $signup->id . '_form';
   return $form_id;
  }
@@ -33,9 +33,27 @@ function mailchimp_signup_form_id() {
  * Implements hook_js_settings_build().
  */
 function mailchimp_overlay_js_settings_build(array &$settings, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
- $settings['mailchimp_overlay']['path'] = '/mailchimp-overlay/enews-signup';
- $settings['mailchimp_overlay']['dialog_width'] = \Drupal::config('mailchimp_overlay.settings')->get('dialog_width');
-}
+  $config                                    = \Drupal::config('mailchimp_overlay.settings');
+  $settings['mailchimp_overlay']['path']     = '/mailchimp-overlay/enews-signup';
+  $settings['mailchimp_overlay']['type']     = $config->get('dialog_type');
+ $settings['mailchimp_overlay']['position'] = ['my' => 'center center', 'at' => 'center center'];
+  $settings['mailchimp_overlay']['width']    = $config->get('dialog_width');
+ }
+ 
+ /**
+  * Implements hook_js_settings_alter().
+  */
+ function mailchimp_overlay_js_settings_alter(array &$settings, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  $config = \Drupal::config('mailchimp_overlay.settings');
+  $layout = $config->get('layout');
+ $settings['mailchimp_overlay']['type']     = $config->get('dialog_type');
+ 
+ if ($layout === 'fixed-bottom-bar') {
+  $settings['mailchimp_overlay']['position'] = ['my' => 'center bottom', 'at' => 'center bottom', 'of' => 'body', 'collision' => 'flip'];
+   $settings['mailchimp_overlay']['width']    = '100%';
+  }
+ 
+ }
 
 /**
  * Implements hook_form_alter().
@@ -43,16 +61,6 @@ function mailchimp_overlay_js_settings_build(array &$settings, \Drupal\Core\Asse
 function mailchimp_overlay_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
  $mailchimp_signup_form_id = mailchimp_signup_form_id();
  if ($form_id === $mailchimp_signup_form_id) {
-//   $form['actions']['close']                    = [
-//    '#type'                    => 'button',
-//    '#value'                   => t('No Thanks!'),
-//    '#name'                    => 'close',
-//    '#button_type'             => 'link',
-//    '#attributes'              => [
-//     'class' => ['close-overlay', 'btn', 'btn-link'],
-//    ],
-//    '#limit_validation_errors' => TRUE,
-//   ];
   $form['actions']['submit']['#ajax'] = [
    'callback' => 'mailchimp_overlay_ajax_submit',
   ];
@@ -94,7 +102,7 @@ function mailchimp_overlay_ajax_submit(&$form, \Drupal\Core\Form\FormStateInterf
     '#markup' => $confirmation_message,
    ],
   ];
-  $response->addCommand(new Drupal\Core\Ajax\HtmlCommand("#mailchimp_overlay_wrapper", $HTMLoutput));
+  $response->addCommand(new Drupal\Core\Ajax\HtmlCommand("#mailchimp_overlay", $HTMLoutput));
  }
 
  return $response;
@@ -120,7 +128,7 @@ function mailchimp_overlay_page_attachments(array &$attachments) {
    setcookie('has_enews', '', -1, '/');
   }
  }
- //  when NOT on admin pages.
+ //  when NOT on admin pages attach scripts and styling.
  if (!$admin_context->isAdminRoute()) {
   if ($config->get('switch') === true) {
    $attachments['#attached']['library'][] = 'mailchimp_overlay/mailchimp-overlay-scripts';
