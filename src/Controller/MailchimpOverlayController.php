@@ -67,8 +67,8 @@ final class MailchimpOverlayController extends ControllerBase {
  public function __invoke() {
   $config      = \Drupal::config('mailchimp_overlay.settings');
   $signup_form = $this->getMailchimpSignupForm();
-  $layout  = $config->get('layout'); 
-  $themeLayout = match($layout){
+  $layout      = $config->get('layout');
+  $themeLayout = match ($layout) {
     'default' => $this->modalLayout($config, $signup_form, $layout),
     'modal-top-image' => $this->modalLayout($config, $signup_form, $layout),
     'modal-left-image' => $this->modalLayout($config, $signup_form, $layout),
