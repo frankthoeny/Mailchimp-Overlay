@@ -100,20 +100,43 @@ class MailchimpOverlayAdminSettingsForm extends ConfigFormBase {
     $signupOptions[$signup->id] = $signup->title;
    }
   }
+
   $form['signup_page'] = [
    '#type'          => 'select',
    '#title'         => $this->t('Signup Page'),
+   '#description'   => t('Select the Signup Page.'),
    '#options'       => $signupOptions,
    '#default_value' => $config->get('signup_page'),
    '#required'      => true,
   ];
 
+  $dialogTypeOptions = [
+    'dialog' => $this->t('Dialog Box'),
+    'modal' => $this->t('Modal Box'),
+  ];
+
+  $form['dialog_type'] = [
+    '#type'          => 'select',
+    '#title'         => $this->t('Type'),
+    '#description'   => $this->t('Enter a type of box for the popup overlay.'),
+    '#options'       => $dialogTypeOptions,
+    '#default_value' => $config->get('dialog_type'),
+    '#required'      => true,
+   ];
+
+  $form['dialog_width'] = [
+   '#type'          => 'number',
+   '#title'         => $this->t('Dialog Width'),
+   '#description'   => $this->t('Enter a number for the width of the overlay.'),
+   '#default_value' => $config->get('dialog_width') ? $config->get('dialog_width') : 600,
+  ];
+
   $layoutOptions = [
-    'default' => $this->t('Default'),
-    'modal-top-image' => $this->t('Modal Top Image'),
-    'modal-left-image' => $this->t('Modal Left Image'),
+   'default'           => $this->t('Default'),
+   'modal-top-image'   => $this->t('Modal Top Image'),
+   'modal-left-image'  => $this->t('Modal Left Image'),
     'modal-right-image' => $this->t('Modal Right Image'),
-    'fixed-bottom-bar' => $this->t('Fixed Bottom Bar'),
+   'fixed-bottom-bar'  => $this->t('Fixed Bottom Bar'),
    ];
 
   $form['layout'] = [
@@ -142,6 +165,7 @@ class MailchimpOverlayAdminSettingsForm extends ConfigFormBase {
 
   $config
    ->set('switch', $form_state->getValue('switch'))
+   ->set('dialog_type', $form_state->getValue('dialog_type'))
    ->set('dialog_width', $form_state->getValue('dialog_width'))
    ->set('signup_page', $form_state->getValue('signup_page'))
    ->set('layout', $form_state->getValue('layout'))
