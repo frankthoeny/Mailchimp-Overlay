@@ -1,25 +1,16 @@
 {#
 /**
  * @file
- * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-2column.html.twig.
- * Mailchimp Overlay 2 Column Template.
+ * Contains Drupal\mailchimp_overlay\templates\mailchimp-overlay-fixed-bottom-bar.html.twig.
+ * Mailchimp Overlay Fixed Bottom Bar Template.
  */
 #}
-{{ attach_library('mailchimp_overlay/mailchimp-overlay-styling') }}
-{% set image_path = backgroundImage %}
-{% set text_color = textColor %}
-{% set background_color = backgroundColor %}
-
-<div id="mailchimp-overlay" style="--enews-background-color: {{background_color}}">
-	<div id="enews_signup_2column_wrapper row">
-		<div class="enews_signup_image column" style="--enews-background-url: url({{ image_path }});"></div>
-		<div class="enews_signup_content column" style="--enews-text-color: {{text_color}}">
-			{{ message }}
+<div id="mailchimp_overlay fixed_bottom_bar">
+	<div class="content">
+		<h2 class="title">{{title}}</h2>
 			{{ signupform }}
-		</div>
-	</div>
-
 	{% if disclaimer %}
-		{{ disclaimer }}
+		<p class="text">{{ disclaimer }}</p>
 	{% endif %}
+</div>
 </div>
